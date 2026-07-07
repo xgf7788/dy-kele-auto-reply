@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Environment
+.env
+
+# Sensitive config
+config/accounts.yaml
+config/accounts1.yaml
+
+# Disabled root package (causes namespace conflict)
+__init__.py.disabled
+
+# Database
+storage/*.db
+storage/*.db-journal
+storage/*.db-wal
+
+# Debug files
+storage/*.png
+storage/*.html
+debug_*.png
+debug_*.html
+
+# Cookies
+storage/cookies_*.txt
+
+# Logs
+storage/logs/
+*.log
+
+# Backup files
+*.bak
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude/

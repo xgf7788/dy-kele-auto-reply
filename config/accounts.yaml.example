@@ -1,0 +1,34 @@
+stores:
+  # Cookie 登录（推荐用于自动化）
+  - store_id: "store_001"
+    name: "店铺A"
+    login_type: "cookie"
+    # 方式1：直接填写 cookie 字符串（不推荐提交到版本控制）
+    # cookies: "sessionid=xxx;sid_guard=yyy;"
+    # 方式2：从环境变量读取（推荐）
+    cookies_from_env: "COOKIES_STORE_001"
+    api_endpoint: "http://localhost:8000/api/chat/reply"
+    api_timeout: 10
+    reply_delay: 1.0
+    enabled: true
+    headless: true
+    page_refresh_interval: 0
+
+  # 手机验证码登录
+  - store_id: "store_002"
+    name: "店铺B"
+    login_type: "phone"
+    phone_from_env: "PHONE_STORE_002"
+    api_endpoint: "http://localhost:8000/api/chat/reply"
+    api_timeout: 10
+    reply_delay: 1.0
+    enabled: false
+    headless: false  # 必须可见才能输入验证码
+
+  # 二维码登录
+  - store_id: "store_003"
+    name: "店铺C"
+    login_type: "qrcode"  # 将显示二维码
+    api_endpoint: "http://localhost:8000/api/chat/reply"
+    enabled: false
+    headless: false  # QR 码登录需要可见浏览器
